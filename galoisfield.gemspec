@@ -5,12 +5,12 @@ require 'galoisfield/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "galoisfield"
-  spec.version       = Galoisfield::VERSION
+  spec.version       = GaloisField::VERSION
   spec.authors       = ["Koga Osamu"]
   spec.email         = ["osak.63@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{Performs calculation over modulus.}
+  spec.summary       = %q{Performs calculation over modulus.}
+  spec.homepage      = "https://github.com/osak/galoisfield"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
