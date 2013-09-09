@@ -58,6 +58,18 @@ module GaloisField
       res.to_galois(self.class::MODULO)
     end
 
+    def ==(other)
+      self.class == other.class && self.to_i == other.to_i
+    end
+
+    def eql?(other)
+      self == other
+    end
+
+    def hash
+      @value
+    end
+
     def coerce(val)
       if val.is_a?(Integer)
         [val.to_galois(self.class::MODULO), self]
