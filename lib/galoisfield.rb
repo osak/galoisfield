@@ -1,3 +1,6 @@
+require "galoisfield/version"
+require "galoisfield/integer.rb"
+
 module GaloisField
   def self.[](modulo)
     @@cache ||= {}
@@ -74,11 +77,5 @@ module GaloisField
     def inspect
       "#{@value}(mod #{self.class::MODULO})"
     end
-  end
-end
-
-class Integer
-  def to_galois(modulo)
-    GaloisField[modulo].new(self)
   end
 end
