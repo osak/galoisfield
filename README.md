@@ -1,6 +1,6 @@
 # Galoisfield
 
-TODO: Write a gem description
+Performs calculation over modulus.
 
 ## Installation
 
