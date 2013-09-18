@@ -8,14 +8,17 @@ module GaloisField
   end
 
   def self.create_impl(modulo)
-    cls = Class.new(Numeric)
-    cls.instance_eval do
-      const_set(:MODULO, modulo)
-      include GaloisNumberImpl
+    mod = Module.new do
+      cls = Class.new(Numeric)
+      cls.instance_eval do
+        const_set(:MODULO, modulo)
+        include GaloisNumberImpl
+      end
+      const_set("Number", cls)
     end
-    name = "GaloisNumber_#{modulo}"
-    const_set(name.intern, cls)
-    cls
+    name = "GaloisField#{modulo}"
+    const_set(name.intern, mod)
+    mod
   end
 
   module GaloisNumberImpl

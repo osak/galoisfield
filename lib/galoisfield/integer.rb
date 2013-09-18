@@ -1,5 +1,5 @@
 class Integer
   def to_galois(modulo)
-    GaloisField[modulo].new(self)
+    GaloisField[modulo]::Number.new(self)
   end
 end
