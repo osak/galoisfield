@@ -1,5 +1,6 @@
 # Galoisfield
 
+![Build Status](https://travis-ci.org/osak/galoisfield.png)
 Performs calculation over modulus.
 
 ## Installation
