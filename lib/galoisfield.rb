@@ -30,15 +30,15 @@ module GaloisField
     end
 
     def +(other)
-      self.class.new((@value + other.to_i) % self.class::MODULO)
+      self.class.new(@value + other.to_i)
     end
 
     def -(other)
-      self.class.new((@value - other.to_i + self.class::MODULO) % self.class::MODULO)
+      self.class.new(@value - other.to_i)
     end
 
     def *(other)
-      self.class.new((@value * other.to_i) % self.class::MODULO)
+      self.class.new(@value * other.to_i)
     end
 
     def /(other)
