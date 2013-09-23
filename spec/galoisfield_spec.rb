@@ -22,6 +22,7 @@ describe GaloisField do
       it {expect(@a - @b).to eq(4.to_galois(5))}
       it {expect(@a * @b).to eq(2.to_galois(5))}
       it {expect(@a / @b).to eq(2.to_galois(5))}
+      it {expect(@a ** 2).to eq(4.to_galois(5))}
       it {expect(@a.inv).to eq(2.to_galois(5))}
     end
 

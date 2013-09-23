@@ -30,35 +30,41 @@ module GaloisField
     end
 
     def +(other)
-      self.class.new((@value + other.to_i) % self.class::MODULO)
+      self.class.new(@value + other.to_i)
     end
 
     def -(other)
-      self.class.new((@value - other.to_i + self.class::MODULO) % self.class::MODULO)
+      self.class.new(@value - other.to_i)
     end
 
     def *(other)
-      self.class.new((@value * other.to_i) % self.class::MODULO)
+      self.class.new(@value * other.to_i)
     end
 
     def /(other)
       self * other.inv
     end
 
-    def inv
+    def **(exp)
+      unless exp.is_a?(Integer)
+        raise TypeError.new("Galois numbers can be powered only by integer value.")
+      end
       res = 1
       pow = @value
-      rem = self.class::MODULO-2
-      while rem > 0
-        if rem.odd?
+      while exp > 0
+        if exp.odd?
           res *= pow
           res %= self.class::MODULO
         end
         pow *= pow
         pow %= self.class::MODULO
-        rem /= 2
+        exp /= 2
       end
       res.to_galois(self.class::MODULO)
+    end
+
+    def inv
+      self**(self.class::MODULO-2)
     end
 
     def ==(other)
