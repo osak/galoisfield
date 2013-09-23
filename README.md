@@ -20,7 +20,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'galoisfield'
+
+a = 42.to_galois(11) #=> 9(mod 11)
+a += 4 #=> 2(mod 11)
+b = a * 5 #=> 10(mod 11)
+
+# Supported operators
+puts a + 10
+puts a - 10
+puts a * 10
+puts a / 10
+puts a ** 10
+```
 
 ## Contributing
 
