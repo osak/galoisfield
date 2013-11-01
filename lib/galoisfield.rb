@@ -63,6 +63,8 @@ module GaloisField
       res.to_galois(self.class::MODULO)
     end
 
+    # Returns the inverse of this number.
+    # @note This method works properly only if the modulo is prime.
     def inv
       self**(self.class::MODULO-2)
     end
